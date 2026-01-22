@@ -1,5 +1,5 @@
 % ===========================
-% i_extract_ewd.m
+% i_extract_lbf.m
 % Author: Justine, 10.23.24
 % ===========================
 clc;
@@ -13,11 +13,6 @@ freq = 400;
 CH = 8;
 
 folder = "./data/";
-
-% EWD
-V_peak_width = [0.11 0.13];   
-
-plot_all = false;
 
 save_enable = true;
 
@@ -37,7 +32,7 @@ for ch = CH
         
         figure(10000)
         hold on;
-        i_signal = i_extract_ewd(voltage, current, V_peak_width, plot_all);
+        [i_signal, ~, ~, ~] = i_extract_lbf(voltage, current);
         hold off;
 
         signal(i) = i_signal;
@@ -55,9 +50,9 @@ for ch = CH
 
     %% Main plot
     if save_enable    
-        filename = strcat('i_signal_ch',num2str(ch), '_', num2str(freq),'hz_ewd.mat');
+        filename = strcat('i_signal_ch',num2str(ch), '_', num2str(freq),'hz_lbf.mat');
         save(filename, 'signal');
-        filename_pic = strcat('i_signal_ch',num2str(ch), '_', num2str(freq),'hz_ewd.png');
+        filename_pic = strcat('i_signal_ch',num2str(ch), '_', num2str(freq),'hz_lbf.png');
         saveas(gcf, filename_pic);
     end
 

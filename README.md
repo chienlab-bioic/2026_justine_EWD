@@ -6,10 +6,11 @@ Extension-enhanced Wavelet Decomposition (EWD) for robust peak extraction in Squ
 
 ## What this repo contains
 - MATLAB implementation of EWD-based SWV peak extraction.
-- Core function: `i_extract_ewd.m` 
+- Core function: `i_extract_ewd.m` under `functions/`
   - Input: voltage + current
   - Output: extracted peak current (and optional debug plots)
-- Example scripts under `examples/`.
+- Conventional function (for benchmarking/comparison): `i_extract_lbf.m` under `functions/`
+- Example scripts for both EWD and LBF under `examples/`.
 
 ---
 
@@ -62,4 +63,3 @@ i_signal = i_extract_ewd(voltage0, current0, V_peak_width, plot_all);
 ## Citation
 For more information, please see:
 - Tsai, Y.-C.; Soh, H. T.; Chien, J.-C. **Extension-Enhanced Wavelet Decomposition: a Noise and Background Resilient Square-Wave Voltammogram Signal-Processing Technique for Electrochemical Aptamer-Based Biosensing In Vivo.** *ACS Sensors* (published online Jan 14, 2026). https://doi.org/10.1021/acssensors.5c02906
-
